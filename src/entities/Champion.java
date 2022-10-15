@@ -1,4 +1,4 @@
-package aplication;
+package entities;
 
 public class Champion {
 	private String name;
@@ -45,6 +45,18 @@ public class Champion {
 			this.life -= (attack - this.armor);
 		}
 		else this.life -= 1;	
+	}
+	public String status(Champion other) {
+		if(this.life > 0 ) {
+			return name 
+			 +": "
+			 +life
+			 +" de vida";
+		}
+		else return  name 
+				 +": 0"
+				 +" de vida (morreu)";
+		
 	}
 	
 	
