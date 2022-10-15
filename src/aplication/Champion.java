@@ -6,7 +6,7 @@ public class Champion {
 	private int attack;
 	private int armor;
 	
-	
+
 	public Champion(String name, int life, int attack, int armor) {
 		this.name = name;
 		this.life = life;
@@ -32,8 +32,20 @@ public class Champion {
 	public int getArmor() {
 		return armor;
 	}
+	
+	public void champion(String name, int life, int damage, int armor) {
+		this.name = name;
+		this.life = life;
+		this.attack = damage;
+		this.armor = armor;
+	}
 
-
+	public void takeDamage(Champion other) {
+		if(this.armor < attack) {
+			this.life -= (attack - this.armor);
+		}
+		else this.life -= 1;	
+	}
 	
 	
 	

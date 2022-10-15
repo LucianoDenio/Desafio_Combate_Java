@@ -34,6 +34,17 @@ public class Program {
 		
 		secondHero = new Champion(heroName, lifeInitial, atk, def);
 		
+		System.out.println("Quantos turnos você Deseja executar ?");
+		int turn = sc.nextInt();
+		
+		for(int i = 0; i < turn ; i++ ) {
+			while (firstHero.getLife() > 0 && secondHero.getLife() > 0) {
+				firstHero.takeDamage(secondHero);
+				secondHero.takeDamage(firstHero);
+			}
+			
+		}
+		
 		
 		sc.close();
 
