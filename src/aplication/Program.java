@@ -2,6 +2,7 @@ package aplication;
 
 import java.util.Locale;
 import java.util.Scanner;
+import entities.Champion;
 
 
 public class Program {
@@ -36,20 +37,17 @@ public class Program {
 		
 		secondHero = new Champion(heroName, lifeInitial, atk, def);
 		
-		System.out.println("Quantos turnos você Deseja executar ?");
+		System.out.print("Quantos turnos você Deseja executar ?");
 		int turn = sc.nextInt();
 		
-		for(int i = 0; i < turn && (firstHero.getLife() > 0 && secondHero.getLife() > 0) ; i++ ) {
+		for(int i = 1; i < turn+1 && (firstHero.getLife() > 0 && secondHero.getLife() > 0) ; i++ ) {
 			firstHero.takeDamage(secondHero);
 			secondHero.takeDamage(firstHero);
 			
 			System.out.println("Resultado do turno " + i);
-			System.out.println(firstHero.status(firstHero)); 
-			System.out.println(secondHero.status(secondHero));
+			System.out.println(firstHero.status()); 
+			System.out.println(secondHero.status());
 			
-			System.out.println("Resultado do turno " + i);
-			firstHero.status(firstHero);
-			secondHero.status(secondHero);
 		}
 		System.out.println();
 		System.out.println("FIM DO COMBATE");

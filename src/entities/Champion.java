@@ -33,20 +33,14 @@ public class Champion {
 		return armor;
 	}
 	
-	public void champion(String name, int life, int damage, int armor) {
-		this.name = name;
-		this.life = life;
-		this.attack = damage;
-		this.armor = armor;
-	}
 
 	public void takeDamage(Champion other) {
 		if(this.armor < attack) {
-			this.life -= (attack - this.armor);
+			this.life -= other.attack - this.armor;
 		}
 		else this.life -= 1;	
 	}
-	public String status(Champion other) {
+	public String status() {
 		if(this.life > 0 ) {
 			return name 
 			 +": "
