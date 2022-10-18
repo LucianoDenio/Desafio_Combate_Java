@@ -21,6 +21,7 @@ public class Program {
 		int atk = sc.nextInt();
 		System.out.print("Armadura: ");
 		int def = sc.nextInt();
+		System.out.println();
 		
 		firstHero = new Champion(heroName, lifeInitial, atk, def);
 		
@@ -34,11 +35,14 @@ public class Program {
 		atk = sc.nextInt();
 		System.out.print("Armadura: ");
 		def = sc.nextInt();
+		System.out.println();
 		
 		secondHero = new Champion(heroName, lifeInitial, atk, def);
 		
+
 		System.out.print("Quantos turnos você Deseja executar ?");
 		int turn = sc.nextInt();
+		System.out.println();
 		
 		for(int i = 1; i < turn+1 && (firstHero.getLife() > 0 && secondHero.getLife() > 0) ; i++ ) {
 			firstHero.takeDamage(secondHero);
@@ -47,6 +51,7 @@ public class Program {
 			System.out.println("Resultado do turno " + i);
 			System.out.println(firstHero.status()); 
 			System.out.println(secondHero.status());
+			System.out.println();
 			
 		}
 		System.out.println();
